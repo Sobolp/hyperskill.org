@@ -79,7 +79,7 @@ public class FloorSpaceOfTheRoom {
         switch (type) {
             case "triangle":
                 double p = (dem[0] + dem[1] + dem[2]) / 2;
-                result = Math.sqrt(p * (p - dem[0]) * (p - dem[1]) + (p - dem[2]));
+                result = Math.sqrt(p * (p - dem[0]) * (p - dem[1]) * (p - dem[2]));
                 break;
             case "rectangle":
                 result = dem[0] * dem[1];
@@ -91,7 +91,7 @@ public class FloorSpaceOfTheRoom {
                 result = 0;
                 break;
         }
-        System.out.println(Math.floor(result*10)/10);
+        System.out.println(result);
 
     }
 }
