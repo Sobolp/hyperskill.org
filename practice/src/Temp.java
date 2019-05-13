@@ -6,7 +6,7 @@ import java.util.List;
 public class Temp {
     public static void main(String args[]) {
 
-            System.out.print(method(127));
+            System.out.print(2%2);
     }
     public static long method(long n) {
         if (n == 1) {
