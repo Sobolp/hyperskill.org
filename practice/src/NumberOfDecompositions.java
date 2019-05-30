@@ -37,8 +37,8 @@ public class NumberOfDecompositions {
     private static void f(int x, int k, String s){
         if (x == 0){
             System.out.println(s);
-        }else {
-            for (int i = 1; i <= min(k,x); i++){
+        }else if (x > 0) {
+            for (int i = 1; i <= k; i++){
                 f(x-i, i, s + " " + i);
             }
         }
