@@ -1,58 +1,66 @@
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
 public class Temp {
-    public static void main(String args[]) {
 
-            System.out.print(2%2);
-    }
-    public static long method(long n) {
-        if (n == 1) {
-            return 0;
-        }
-        return method(n / 2) + 1;
-    }
-    public static String prepareFullName(String firstName, String lastName) {
+    public static int convert(Long val) {
         // write your code here
-        return firstName + ((lastName !=null)?" "+lastName:"");
-    }
-    public static String concatStringsWithoutDigits(String[] strings) {
-        // write your code with StringBuilder here
-        StringBuilder sb = new StringBuilder();
-        for(String s: strings){
-            sb.append(s);
+        if (val == null) {
+            return 0;
+        } else if (val >= Integer.MAX_VALUE) {
+            return Integer.MAX_VALUE;
+        } else if (val <= Integer.MIN_VALUE) {
+            return Integer.MIN_VALUE;
+        } else {
+            return val.intValue();
         }
-        for(int i = sb.length(); i>0;i--){
-            if(Character.isDigit(sb.charAt(i))){
-                sb.deleteCharAt(i);
+    }
+
+        public static long solution(long[] numbers) {
+            long maxVal;
+            if (numbers != null) {
+                maxVal = numbers[0];
+                for (int i = 1; i < numbers.length; i++) {
+                    if (maxVal < numbers[i]) {
+                        maxVal = numbers[i];
+                    }
+                }
+            } else {
+                maxVal = 0;
             }
+            return maxVal;
         }
-        return sb.toString();
-    }
+    /* Do not change code below */
+        public static void main(String[] args) {
+//            final Scanner scanner = new Scanner(System.in);
+//            char[][] fild = new char[3][3];
+//            String input = scanner.nextLine();
+//            System.out.println("---------");
+//            int index = 1;
+//            for (int i = 0; i < 3; i++){
+//                System.out.print("| ");
+//                for (int j = 0; j < 3; j++){
+//                    fild[i][j] = input.charAt(index++);
+//                    System.out.print(fild[i][j]+" ");
+//                }
+//                System.out.println("|");
+//            }
+//
+//
+//            System.out.println("---------");
+//            boolean a,b;
+//            a = false;
+//            b = false;
+//            System.out.println(a&b);
+//            System.out.println(a||b);
+//            Scanner scanner = new Scanner(System.in);
+//            int a = scanner.nextInt();
+//            int b = scanner.nextInt();
+//            scanner.nextLine();
+//            int c = scanner.nextInt();
+//            int n = scanner.nextInt();
+//            scanner.nextLine();
+//            System.out.println(a+" "+b+" "+ c +" "+ n);
+            System.out.println(9^6);
 
-    public static <T> void multiply(List<T> listIO, int n) {
-        // Add implementation here
-        List<T> tmpList = new ArrayList<>();
-        for (int i = 0; i < n; i++) {
-            tmpList.addAll(listIO);
         }
-        listIO.clear();
-        listIO.addAll(tmpList);
-    }
-
-    public static int getNumberOfMaxParam(int a, int b, int c) {
-        // write a body here
-        int result = 0;
-        if (a >= b) {
-            result = 1;
-        } else if (b >= c) {
-            result = 2;
-        }
-        if (c > a && result != 2) {
-            result = 3;
-        }
-        return result;
-    }
 }
