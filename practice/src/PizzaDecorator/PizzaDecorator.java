@@ -1,6 +1,7 @@
+package PizzaDecorator;
 import java.util.Locale;
 
-class PizzaDecorator {
+class TestDrive {
     public static void main(String[] args) {
         Pizza simpleVeganPizza = new Vegan();
         System.out.println(simpleVeganPizza.getDescription() + " $" + formatSum(simpleVeganPizza.cost()));
@@ -174,3 +175,4 @@ class Spinach extends Decorator {
         return .09 + pizza.cost();
     }
 }
+
