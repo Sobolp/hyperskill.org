@@ -31,6 +31,9 @@ public class Temp {
         }
     /* Do not change code below */
         public static void main(String[] args) {
+            String a = "Petya";
+            a = a.concat(" vasya");
+            System.out.println(a);
 //            final Scanner scanner = new Scanner(System.in);
 //            char[][] fild = new char[3][3];
 //            String input = scanner.nextLine();
