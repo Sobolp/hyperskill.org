@@ -11,10 +11,11 @@ import java.util.List;
  */
 public class ListPublicFields {
     public static void main(String[] args) {
-        FieldGetter fieldGetter = new FieldGetter();
-        for (String s : fieldGetter.getPublicFields(new String())) {
-            System.out.println(s);
-        }
+        Arrays.stream(new FieldGetter().getPublicFields(new String())).forEach(s -> System.out.println(s));
+//        FieldGetter fieldGetter = new FieldGetter();
+//        for (String s : fieldGetter.getPublicFields(new String())) {
+//            System.out.println(s);
+//        }
     }
 }
 /**
