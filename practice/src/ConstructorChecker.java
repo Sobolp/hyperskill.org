@@ -11,7 +11,8 @@ class ConstructorChecker {
 
     public boolean checkPublicParameterlessConstructor(Class<?> clazz) {
         // Add implementation here
-        return Arrays.stream(clazz.getConstructors()).filter(x -> x.getParameterCount() == 0).count() > 0;
+        return Arrays.stream(clazz.getConstructors())
+                .anyMatch(x -> x.getParameterCount() == 0);
     }
 
 }
