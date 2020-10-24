@@ -29,7 +29,7 @@ public class NoJ {
             }
         }
         while (listIterator.hasPrevious()) {
-                System.out.println(listIterator.previous());
+            System.out.println(listIterator.previous());
         }
     }
 
