@@ -32,21 +32,33 @@ import java.util.Scanner;
  * 4 dd
  */
 public class GettingSubmaps {
+    //    public static void main(String[] args) {
+//        Scanner scanner = new Scanner(System.in);
+//        final int fromKey = scanner.nextInt();
+//        final int toKey = scanner.nextInt();
+//        final int n = scanner.nextInt();
+//        scanner.nextLine();
+//        Map<Integer, String> map = new HashMap<>();
+//        for (int i = 0; i < n; i++) {
+//            String[] entry = scanner.nextLine().split("\\s+");
+//            map.put(Integer.parseInt(entry[0]), entry[1]);
+//        }
+//        for (int key : map.keySet()) {
+//            if (key >= fromKey && key <= toKey) {
+//                System.out.println(key + " " + map.get(key));
+//            }
+//        }
+//    }
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        final int fromKey = scanner.nextInt();
-        final int toKey = scanner.nextInt();
-        final int n = scanner.nextInt();
-        scanner.nextLine();
-        Map<Integer, String> map = new HashMap<>();
-        for (int i = 0; i < n; i++) {
-            String[] entry = scanner.nextLine().split("\\s+");
-            map.put(Integer.parseInt(entry[0]), entry[1]);
+        var scanner = new java.util.Scanner(System.in);
+        int from = scanner.nextInt();
+        int to = scanner.nextInt();
+        int lines = scanner.nextInt();
+
+        var map = new java.util.TreeMap<Integer, String>();
+        while (lines-- > 0) {
+            map.put(scanner.nextInt(), scanner.next());
         }
-        for (int key : map.keySet()) {
-            if (key >= fromKey && key <= toKey) {
-                System.out.println(key + " " + map.get(key));
-            }
-        }
+        map.subMap(from, true, to, true).forEach((k, v) -> System.out.println(k + " " + v));
     }
 }
