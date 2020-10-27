@@ -22,7 +22,7 @@ import java.util.function.Function;
  */
 class CurryConcat {
 
-    public static String calc(String str1, String str2, String str3, String str4) {
+    public static String calc(String... str) {
 
         Function<String, Function<String, Function<String, Function<String, String>>>> stringFun =
                 f1 -> f2 -> f3 -> f4 -> f1.toLowerCase()
@@ -30,7 +30,7 @@ class CurryConcat {
                         .concat(f2.toLowerCase())
                         .concat(f4.toUpperCase());
 
-        return stringFun.apply(str1).apply(str2).apply(str3).apply(str4);
+        return stringFun.apply(str[0]).apply(str[1]).apply(str[2]).apply(str[3]);
     }
 
     // Don't change the code below
