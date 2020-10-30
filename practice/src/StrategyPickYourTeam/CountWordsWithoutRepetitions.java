@@ -31,8 +31,8 @@ public class CountWordsWithoutRepetitions {
                 .limit(n)
                 .flatMap(Collection::stream)
                 .map(String::toLowerCase)
-                .collect(Collectors.toSet())
-                .size();
+                .distinct()
+                .count();
     }
 
     // Don't change the code below
