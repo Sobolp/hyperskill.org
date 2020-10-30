@@ -1,9 +1,6 @@
 package StrategyPickYourTeam;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 import java.util.stream.Collectors;
 
 /**
@@ -32,7 +29,7 @@ public class CountWordsWithoutRepetitions {
     public static long count(int n, List<List<String>> lines) {
         return lines.stream()
                 .limit(n)
-                .flatMap(words -> words.stream())
+                .flatMap(Collection::stream)
                 .map(String::toLowerCase)
                 .collect(Collectors.toSet())
                 .size();
