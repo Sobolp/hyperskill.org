@@ -33,8 +33,6 @@ public class CountWordsWithoutRepetitions {
         return lines.stream()
                 .limit(n)
                 .flatMap(words -> words.stream())
-                .collect(Collectors.toList())
-                .stream()
                 .map(String::toLowerCase)
                 .collect(Collectors.toSet())
                 .size();
