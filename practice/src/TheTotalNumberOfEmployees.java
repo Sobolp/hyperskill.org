@@ -58,7 +58,7 @@ public class TheTotalNumberOfEmployees {
                 .map(department -> department.getEmployees().stream()
                         .filter(employee -> employee.getSalary() >= threshold)
                         .count())
-                .reduce(0L, (sum, n) -> sum + n).intValue();
+                .reduce(0L, (sum, n) -> sum + n);
     }
 
     // Don't change the code below
